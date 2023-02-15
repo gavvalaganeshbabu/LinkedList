@@ -10,11 +10,11 @@ namespace LinkedList
 
             LinkedList L = new LinkedList();
             L.Add(56);
+            L.Add(30);
             L.Add(70);
-            Console.WriteLine("Before Inserting ");
+            Console.WriteLine("Before Deleting");
             L.Display();
-            Console.WriteLine("After  Inserting ");
-            L.InsertElement(2,30);
+            L.DeleteFirstElement();
             L.Display();
 
 
