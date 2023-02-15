@@ -34,11 +34,11 @@ namespace LinkedList
                 Node temp = this.head;
                 if (temp == null)
                 {
-                    Console.WriteLine(" Linked List is Empty ");
+                    Console.WriteLine(" Linked List is Empty \n");
                 }
                 while (temp != null)
                 {
-                    Console.Write(temp.data + " ");
+                    Console.WriteLine(temp.data + " ");
                     temp = temp.next;
                 }
             }
