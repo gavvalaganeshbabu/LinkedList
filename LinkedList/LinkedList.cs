@@ -7,7 +7,7 @@ namespace LinkedList
     internal class LinkedList
     {
         internal Node head;
-        internal void AddLast(int data)
+        internal void Add(int data)
         {
             Node Node = new Node(data);
             if (this.head == null)
@@ -25,14 +25,11 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Element inserted into LinkedList", Node.data);
         }
-        internal void AddFirst(int data)
+        internal void Append(int data)
         {
-            Node Node = new Node(data);
-            Node.next = this.head;
-            this.head = Node;
-            Console.WriteLine("{0} Element inserted into LinkedList", Node.data);
+            Add(data);
         }
-            internal void Display()
+        internal void Display()
             {
                 Node temp = this.head;
                 if (temp == null)
