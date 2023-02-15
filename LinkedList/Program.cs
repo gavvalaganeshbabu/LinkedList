@@ -9,14 +9,12 @@ namespace LinkedList
             Console.WriteLine("Welcome to the LinkedList Program");
 
             LinkedList L = new LinkedList();
-
-            Console.WriteLine("Adding elements into Linkedlist using AddLast Method:");
             L.Add(56);
-            Console.WriteLine("Before Appending ");
+            L.Add(70);
+            Console.WriteLine("Before Inserting ");
             L.Display();
-            Console.WriteLine("After Appending ");
-            L.Append(30);
-            L.Append(70);
+            Console.WriteLine("After  Inserting ");
+            L.InsertElement(2,30);
             L.Display();
 
 

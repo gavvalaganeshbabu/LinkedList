@@ -25,9 +25,38 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Element inserted into LinkedList", Node.data);
         }
-        internal void Append(int data)
+        internal Node InsertElement(int position, int data)
         {
-            Add(data);
+            Node temp = head;
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid Data");
+            }
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        var node = new Node(data);
+                        node.next = temp.next;
+                        temp.next = node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (position != 1)
+                {
+                    Console.WriteLine("Position Out of Range");
+                }
+            }
+            return head;
         }
         internal void Display()
             {
