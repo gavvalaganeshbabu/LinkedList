@@ -12,8 +12,9 @@ namespace LinkedList
             LinkedList L = new LinkedList();
             L.Add(56);
             L.Add(30);
+            L.Add(40);
             L.Add(70);
-            L.Search(30);
+            L.DeleteElement(3,40);
             L.Display();
 
 

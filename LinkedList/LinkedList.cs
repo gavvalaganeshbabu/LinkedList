@@ -25,21 +25,46 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Element inserted into LinkedList", Node.data);
         }
-
-        internal Node Search(int value)
+        public void DeleteElement(int position, int data)
         {
-            int Count = 1;
-            while (head != null)
+            if (head == null)
             {
-                if (head.data == value)
-                {
-                    Console.WriteLine($"\n The Value is {value} at {Count} position");
-                    return head;
-                }
-                head = head.next;
-                Count++;
+                return;
             }
-            return null;
+            Node temp = head;
+            if (position == 0)
+            {
+                head = temp.next;
+                return;
+            }
+            for (int i = 1; temp != null && i < position - 1; i++)
+            {
+                temp = temp.next;
+            }
+            if (temp == null || temp.next == null)
+            {
+                return;
+            }
+            Node next1 = temp.next.next;
+            temp.next = next1;
+        }
+        public void Display()
+        {
+            Console.WriteLine("After Deletion :");
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is Empty");
+                return;
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    Console.Write(" " + temp.data + " ");
+                    temp = temp.next;
+                }
+            }
         }
     }
 }
