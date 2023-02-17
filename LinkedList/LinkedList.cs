@@ -7,24 +7,7 @@ namespace LinkedList
     internal class LinkedList
     {
         internal Node head;
-        internal void Add(int data)
-        {
-            Node Node = new Node(data);
-            if (this.head == null)
-            {
-                this.head = Node;
-            }
-            else
-            {
-                Node temp = this.head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = Node;
-            }
-            Console.WriteLine("{0} Element inserted into LinkedList", Node.data);
-        }
+        
         public void Display()
         {
             Node temp = this.head;
@@ -37,45 +20,42 @@ namespace LinkedList
             {
                 while (temp != null)
                 {
-                    Console.WriteLine(" " + temp.data + " ");
+                    Console.Write(" " + temp.data + " ");
                     temp = temp.next;
                 }
             }
         }
 
-        internal Node InsertElement(int position, int data)
+       internal void sortedList(Node new_node)
         {
-            Node temp = head;
-            if (position < 1)
+            
+            Node current;
+
+
+            if (head == null || head.data >= new_node.data)
             {
-                Console.WriteLine("Invalid Data");
-            }
-            if (position == 1)
-            {
-                var newNode = new Node(data);
-                newNode.next = this.head;
-                head = newNode;
+                new_node.next = head;
+                head = new_node;
             }
             else
             {
-                while (position-- != 0)
-                {
-                    if (position == 1)
-                    {
-                        var node = new Node(data);
-                        node.next = temp.next;
-                        temp.next = node;
-                        break;
-                    }
-                    temp = temp.next;
-                }
-                if (position != 1)
-                {
-                    Console.WriteLine("Position Out of Range");
-                }
+                current = head;
+
+                while (current.next != null && current.next.data < new_node.data)
+                    current = current.next;
+
+                new_node.next = current.next;
+                current.next = new_node;
             }
-            return head;
+    
+       }
+        internal Node newNode(int data)
+        {
+            Node x = new Node(data);
+            return x;
         }
+
+
     }
 }
 

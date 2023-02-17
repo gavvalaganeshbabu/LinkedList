@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace LinkedList
@@ -13,5 +14,6 @@ namespace LinkedList
             this.data = data;
             this.next = null;
         }
+      
     }
 }
