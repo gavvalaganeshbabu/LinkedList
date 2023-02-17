@@ -13,10 +13,11 @@ namespace LinkedList
             L.Add(56);
             L.Add(30);
             L.Add(70);
-            L.Search(30);
+            Console.WriteLine("Before Inserting ");
             L.Display();
-
-
+            L.InsertElement(3,40);
+            Console.WriteLine("After Inserting ");
+            L.Display();
         }
     }
     }

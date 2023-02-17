@@ -25,21 +25,56 @@ namespace LinkedList
             }
             Console.WriteLine("{0} Element inserted into LinkedList", Node.data);
         }
-
-        internal Node Search(int value)
+        public void Display()
         {
-            int Count = 1;
-            while (head != null)
+            Node temp = this.head;
+            if (temp == null)
             {
-                if (head.data == value)
-                {
-                    Console.WriteLine($"\n The Value is {value} at {Count} position");
-                    return head;
-                }
-                head = head.next;
-                Count++;
+                Console.WriteLine("LinkedList is Empty");
+                return;
             }
-            return null;
+            else
+            {
+                while (temp != null)
+                {
+                    Console.WriteLine(" " + temp.data + " ");
+                    temp = temp.next;
+                }
+            }
+        }
+
+        internal Node InsertElement(int position, int data)
+        {
+            Node temp = head;
+            if (position < 1)
+            {
+                Console.WriteLine("Invalid Data");
+            }
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        var node = new Node(data);
+                        node.next = temp.next;
+                        temp.next = node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (position != 1)
+                {
+                    Console.WriteLine("Position Out of Range");
+                }
+            }
+            return head;
         }
     }
 }
