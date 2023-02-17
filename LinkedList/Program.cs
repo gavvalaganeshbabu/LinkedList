@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LinkedList
 {
@@ -12,9 +13,7 @@ namespace LinkedList
             L.Add(56);
             L.Add(30);
             L.Add(70);
-            Console.WriteLine("Before Deleting");
-            L.Display();
-            L.DeleteFirstElement();
+            L.Search(30);
             L.Display();
 
 

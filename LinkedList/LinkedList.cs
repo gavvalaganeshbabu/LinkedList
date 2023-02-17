@@ -26,27 +26,21 @@ namespace LinkedList
             Console.WriteLine("{0} Element inserted into LinkedList", Node.data);
         }
 
-        public void DeleteFirstElement()
+        internal Node Search(int value)
         {
-            if (head != null)
+            int Count = 1;
+            while (head != null)
             {
+                if (head.data == value)
+                {
+                    Console.WriteLine($"\n The Value is {value} at {Count} position");
+                    return head;
+                }
                 head = head.next;
-                Console.WriteLine("\nFirst element deleted");
+                Count++;
             }
-        }
-        internal void Display()
-            {
-                Node temp = this.head;
-                if (temp == null)
-                {
-                    Console.WriteLine(" Linked List is Empty \n");
-                }
-                while (temp != null)
-                {
-                    Console.WriteLine(temp.data + " ");
-                    temp = temp.next;
-                }
-            }
+            return null;
         }
     }
+}
 
