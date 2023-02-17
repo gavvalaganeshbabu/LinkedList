@@ -14,9 +14,7 @@ namespace LinkedList
             L.Add(30);
             L.Add(70);
             L.Search(30);
-            L.Display();
-
-
+           
         }
     }
     }
